@@ -14,15 +14,15 @@ The goal of the API is to keep it as simple and flexible as possible, while rema
 * It uses C++20 and depends on the .NET SDK being present on the system
 
 ### Building
-Coral uses the [premake](https://premake.github.io/) meta-build system in order to generate build files for other build systems (e.g Visual Studio Soltuions, Makefiles, etc...)
+Coral uses the CMake build system in order to generate build files for other build systems (e.g Visual Studio Soltuions, Makefiles, etc...)
 
-You'll need to download premake from [https://premake.github.io/](https://premake.github.io/), after that open up a terminal and cd into the root directory of Coral, then run this command:
+You'll need to download CMake from [https://premake.github.io/](https://cmake.org/), after that open up a terminal and cd into the root directory of Coral, then run this command:
 
 ```
-premake5 [action]
+mkdir build
+cd build
+cmake ..
 ```
-
-where action is one of the supported actions in premake: [https://premake.github.io/docs/Using-Premake#using-premake-to-generate-project-files](https://premake.github.io/docs/Using-Premake#using-premake-to-generate-project-files)
 
 ## License
 Coral is licensed under the [MIT](./LICENSE) license
