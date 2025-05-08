@@ -16,7 +16,7 @@ The goal of the API is to keep it as simple and flexible as possible, while rema
 ### Building
 Coral uses the CMake build system in order to generate build files for other build systems (e.g Visual Studio Soltuions, Makefiles, etc...)
 
-You'll need to download CMake from [https://premake.github.io/](https://cmake.org/), after that open up a terminal and cd into the root directory of Coral, then run this command:
+You'll need to download CMake from [this website](https://cmake.org/), after that open up a terminal and cd into the root directory of Coral, then run this command:
 
 ```
 mkdir build
