@@ -10,6 +10,8 @@ add_compile_definitions(
     $<$<PLATFORM_ID:Darwin>:CORAL_MACOSX>
 )
 
+set(CORAL_DIR ${CMAKE_SOURCE_DIR})
+
 # Actual static library
 file(GLOB_RECURSE SOURCE_DIR "Coral.Native/Source/**.cpp" "Coral.Native/Source/**.hpp" "Coral.Native/Include/Coral/**.h")
 add_library(Coral STATIC ${SOURCE_DIR})
