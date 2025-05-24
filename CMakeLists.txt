@@ -31,6 +31,8 @@ add_custom_target(Coral.Managed
     COMMENT "Generating and building Coral.Managed"
 )
 
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/Coral.Managed/Coral.Managed.runtimeconfig.json" DESTINATION "${CMAKE_SOURCE_DIR}/Strype/master/DotNet")
+
 # Actual static library
 file(GLOB_RECURSE SOURCE_DIR
     "Coral.Native/Source/**.cpp"
