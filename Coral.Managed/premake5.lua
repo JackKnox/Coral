@@ -1,3 +1,14 @@
+StrypeDirectory = os.getenv("STRYPE_DIR")
+
+workspace "Coral.Managed"
+	architecture "universal"
+	startproject "Coral.Managed"
+
+	configurations {
+		"Debug",
+		"Release"
+	}
+
 include "../Premake/CSExtensions.lua"
 
 project "Coral.Managed"
@@ -9,9 +20,9 @@ project "Coral.Managed"
         kind "SharedLib"
         clr "Unsafe"
         dependson { "Coral.Generator" }
-        
-	    targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-	    objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
+
+	    targetdir ("%{StrypeDirectory}/Strype/master/DotNet")
+	    objdir ("%{StrypeDirectory}/Strype/master/DotNet/Intermediates")
 
         -- Don't specify architecture here. (see https://github.com/premake/premake-core/issues/1758)
 
