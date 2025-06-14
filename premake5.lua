@@ -12,5 +12,5 @@ project "Coral.Managed"
         -- Don't specify architecture here
 
         files {
-            "Source/**.cs"
+            "Coral.Managed/Source/**.cs"
         }
