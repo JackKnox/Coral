@@ -81,8 +81,9 @@ namespace Coral {
 			return result;
 		}
 
+		
 		template<>
-		std::string GetFieldValue(std::string_view InFieldName) const
+		std::string GetFieldValue<std::string>(std::string_view InFieldName) const
 		{
 			String result;
 			GetFieldValueRaw(InFieldName, &result);
@@ -90,9 +91,9 @@ namespace Coral {
 			String::Free(result);
 			return s;
 		}
-
+		
 		template<>
-		bool GetFieldValue(std::string_view InFieldName) const
+		bool GetFieldValue<bool>(std::string_view InFieldName) const
 		{
 			Bool32 result;
 			GetFieldValueRaw(InFieldName, &result);
