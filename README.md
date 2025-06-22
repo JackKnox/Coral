@@ -1,4 +1,6 @@
 # Coral
+[![CMake build](https://github.com/JackKnox/Coral/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/JackKnox/Coral/actions/workflows/cmake-multi-platform.yml)
+
 The fork of the library is coupled to the [Strype game engine](https://github.com/JackKnox/Strype).
 
 Coral is a C++ wrapper around the .NET HostFXR library, the purpose of Coral is to provide an interface similar to [Mono](https://www.mono-project.com/) when it comes to C++/C# interop, but in a more modern style, and using .NET Core instead of .NET Framework.
