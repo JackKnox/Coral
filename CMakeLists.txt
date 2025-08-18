@@ -10,20 +10,12 @@ add_compile_definitions(
     $<$<PLATFORM_ID:Darwin>:CORAL_MACOSX>
 )
 
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/Coral.Managed/Coral.Managed.runtimeconfig.json" DESTINATION "${CMAKE_SOURCE_DIR}/Strype/master/DotNet")
+file(GLOB_RECURSE SOURCE_DIR "Source/**.cpp")
+add_library(Coral STATIC ${SOURCE_DIR})
 
-# Actual static library
-file(GLOB_RECURSE SOURCE_DIR
-    "Coral.Native/Source/**.cpp"
-)
+target_precompile_headers(Coral PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/Source/CoralPCH.hpp")
 
-add_library(Coral.Native STATIC ${SOURCE_DIR})
-
-target_precompile_headers(Coral.Native PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/Coral.Native/Source/CoralPCH.hpp")
-
-target_include_directories(Coral.Native PUBLIC 
-    "${CMAKE_CURRENT_SOURCE_DIR}/Coral.Native/Source" 
-    "${CMAKE_CURRENT_SOURCE_DIR}/Coral.Native/Include/Coral"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Coral.Native/Include/"
+target_include_directories(Coral PUBLIC 
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source" 
     "${CMAKE_CURRENT_SOURCE_DIR}/NetCore"
 )
