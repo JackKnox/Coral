@@ -154,7 +154,7 @@ namespace Coral {
 			std::filesystem::path("/usr/share/dotnet/host/fxr/"),
 		};
 
-#elif defined(CORAL_MAC)
+#elif defined(CORAL_MACOSX)
 		auto searchPaths = std::array
 		{
 			std::filesystem::path("/usr/local/share/dotnet/host/fxr/"), // Intel / older Homebrew
