@@ -130,14 +130,14 @@ namespace Coral {
 	{
 #if defined(CORAL_WINDOWS)
 		std::filesystem::path basePath = "";
-		
+	
 		// Find the Program Files folder
 		TCHAR pf[MAX_PATH];
 		SHGetSpecialFolderPath(
-		nullptr,
-		pf,
-		CSIDL_PROGRAM_FILES,
-		FALSE);
+			nullptr,
+			pf,
+			CSIDL_PROGRAM_FILES,
+			FALSE);
 
 		basePath = pf;
 		basePath /= "dotnet/host/fxr/";
@@ -152,6 +152,14 @@ namespace Coral {
 		{
 			std::filesystem::path("/usr/lib/dotnet/host/fxr/"),
 			std::filesystem::path("/usr/share/dotnet/host/fxr/"),
+		};
+
+#elif defined(CORAL_MAC)
+		auto searchPaths = std::array
+		{
+			std::filesystem::path("/usr/local/share/dotnet/host/fxr/"), // Intel / older Homebrew
+			std::filesystem::path("/usr/local/lib/dotnet/host/fxr/"),   // Some official installers
+			std::filesystem::path("/opt/homebrew/share/dotnet/host/fxr/"), // Apple Silicon Homebrew
 		};
 #endif
 
