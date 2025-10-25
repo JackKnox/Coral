@@ -88,7 +88,8 @@ namespace Coral {
 		const Type& GetType();
 		
 		void Destroy();
-
+		
+		void* GetGCHandle() const { return m_Handle; }
 		bool IsValid() const { return m_Handle != nullptr && m_Type != nullptr; }
 
 	private:
